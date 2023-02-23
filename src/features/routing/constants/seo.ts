@@ -17,6 +17,6 @@ export const SEO = {
   },
 } as const;
 
-export const APPLICATION_NAME = 'Dashboard';
+export const APPLICATION_NAME = 'Dashboard App';
 
 export const CANONICAL_URL = 'https://example.com';
