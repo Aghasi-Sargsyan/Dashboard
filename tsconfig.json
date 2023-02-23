@@ -18,9 +18,16 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*", "./dist/*", ""],
+      "public/*": ["public/*"],
       "pages/*": ["src/pages/*"],
       "components/*": ["src/components/*"],
-      "public/*": ["public/*"]
+      "styles/*": ["src/styles/*"],
+      "utils/*": ["src/utils/*"],
+      "hooks/*": ["src/hooks/*"],
+      "features/*": ["src/features/*"],
+      "services/*": ["src/services/*"],
+      "assets/*": ["src/assets/*"],
+      "types/*": ["src/types/*"],
     }
   },
   "include": ["src"],
