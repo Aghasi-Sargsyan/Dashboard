@@ -4,24 +4,21 @@ import ProtectedRoute from 'features/routing/components/ProtectedRoute';
 import APP_ROUTES from 'features/routing/constants/routes';
 import NoPage from 'pages/NoPage/NoPage';
 import LoadingFallback from 'components/utils/LoadingFallback/LoadingFallback';
+import { Navigate } from 'react-router';
+import { selectIsAuthenticated } from 'features/authentication/services/authSlice';
+import { useAppSelector } from '@/store/hooks';
 
-const Dashboard = lazy(() => import('pages/Dashboard'));
 const Login = lazy(() => import('pages/Login'));
 const Users = lazy(() => import('pages/Users'));
 const Products = lazy(() => import('pages/Products'));
 
 const AppRouter = () => {
-  const isLoggedIn = true;
-
+  const isLoggedIn = useAppSelector(selectIsAuthenticated);
   const protectedElement = <ProtectedRoute isLoggedIn={isLoggedIn} to={APP_ROUTES.home.href} />;
 
-  const dashboardElement = (
-    <Suspense fallback={<LoadingFallback />}>
-      <Dashboard />
-    </Suspense>
-  );
-
-  const loginElement = (
+  const rootElement = isLoggedIn ? (
+    <Navigate to={APP_ROUTES.products.href} replace />
+  ) : (
     <Suspense fallback={<LoadingFallback />}>
       <Login />
     </Suspense>
@@ -29,7 +26,7 @@ const AppRouter = () => {
 
   return (
     <Routes>
-      <Route path={APP_ROUTES.home.href} element={isLoggedIn ? dashboardElement : loginElement} />
+      <Route path={APP_ROUTES.home.href} element={rootElement} />
       <Route element={protectedElement}>
         <Route
           path={APP_ROUTES.users.href}

@@ -6,13 +6,17 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ErrorBoundary, ErrorFallback } from 'components/utils';
+import { Provider } from 'react-redux';
+import store from '@/store';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <HelmetProvider>
-    <BrowserRouter>
-      <ErrorBoundary fallback={<ErrorFallback />}>
-        <App />
-      </ErrorBoundary>
-    </BrowserRouter>
-  </HelmetProvider>,
+  <Provider store={store}>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ErrorBoundary fallback={<ErrorFallback />}>
+          <App />
+        </ErrorBoundary>
+      </BrowserRouter>
+    </HelmetProvider>
+  </Provider>,
 );

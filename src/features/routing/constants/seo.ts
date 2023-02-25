@@ -3,10 +3,6 @@ export const SEO = {
     title: 'Login',
     description: 'Login page',
   },
-  dashboard: {
-    title: 'Dashboard',
-    description: 'Dashboard page',
-  },
   users: {
     title: 'Users',
     description: 'Users page',
