@@ -1,12 +1,12 @@
 import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import ProtectedRoute from 'features/routing/components/ProtectedRoute';
-import APP_ROUTES from 'features/routing/constants/routes';
 import NoPage from 'pages/NoPage/NoPage';
 import LoadingFallback from 'components/utils/LoadingFallback/LoadingFallback';
 import { Navigate } from 'react-router';
-import { selectIsAuthenticated } from 'features/authentication/services/authSlice';
 import { useAppSelector } from '@/store/hooks';
+import { selectIsAuthenticated } from 'features/authentication/services';
+import { APP_ROUTES } from 'features/routing/constants';
+import { ProtectedRoute } from 'features/routing/components';
 
 const Login = lazy(() => import('pages/Login'));
 const Users = lazy(() => import('pages/Users'));

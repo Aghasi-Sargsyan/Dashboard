@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import cn from './cn.module.css';
-import APP_ROUTES from 'features/routing/constants/routes';
-import { logout, selectUser } from 'features/authentication/services/authSlice';
+import { APP_ROUTES } from 'features/routing/constants';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import classNames from 'classnames';
 import { Button } from 'components/ui';
+import { selectUser, logout } from 'features/authentication/services';
 
 const Sidebar = () => {
   const dispatch = useAppDispatch();

@@ -1,6 +1,6 @@
 import React from 'react';
-import AppRouter from 'features/routing/components/AppRouter';
-import useInitUser from 'features/authentication/hooks/useInitUser';
+import { AppRouter } from 'features/routing/components';
+import { useInitUser } from 'features/authentication/hooks';
 
 const App = () => {
   useInitUser();

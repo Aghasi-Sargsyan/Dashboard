@@ -1,5 +1,5 @@
-import { useLazyGetUserQuery } from 'features/authentication/services/authApi';
 import React from 'react';
+import { useLazyGetUserQuery } from 'features/authentication/services';
 
 const useInitUser = () => {
   const [getUser] = useLazyGetUserQuery();

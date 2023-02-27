@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { login, logout, selectUser } from './authSlice';
+import { login, logout, selectUser } from 'features/authentication/services';
 import { RootState } from '@/store/types';
-import { LoginRequest, UserResponse } from '../models';
+import { LoginRequest, UserResponse } from 'features/authentication/models';
 import { mockUser } from 'features/authentication/mock';
 import { LS_TOKEN_KEY } from '@/constants/storage';
 import { API_ENDPOINTS } from '@/constants/api';

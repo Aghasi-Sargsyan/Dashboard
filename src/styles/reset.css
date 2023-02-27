@@ -45,9 +45,6 @@ dl,
 dt,
 dd,
 menu,
-ol,
-ul,
-li,
 fieldset,
 form,
 label,
@@ -109,11 +106,6 @@ section {
 }
 body {
   line-height: 1;
-}
-menu,
-ol,
-ul {
-  list-style: none;
 }
 blockquote,
 q {

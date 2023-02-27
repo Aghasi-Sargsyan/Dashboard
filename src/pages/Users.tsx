@@ -1,6 +1,6 @@
 import React from 'react';
 import MainLayout from 'layouts/MainLayout/MainLayout';
-import { SEO } from 'features/routing/constants/seo';
+import { SEO } from 'features/routing/constants';
 
 const Users = () => {
   const { title, description } = SEO.users;

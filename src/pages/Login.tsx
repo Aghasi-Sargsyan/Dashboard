@@ -1,8 +1,8 @@
 import React from 'react';
 import MainLayout from 'layouts/MainLayout/MainLayout';
-import { SEO } from 'features/routing/constants/seo';
-import { LoginForm } from 'features/authentication';
-import { useLoginMutation } from 'features/authentication/services/authApi';
+import { LoginForm } from 'features/authentication/components';
+import { SEO } from 'features/routing/constants';
+import { useLoginMutation } from 'features/authentication/services';
 
 const Login = () => {
   const { title, description } = SEO.login;
