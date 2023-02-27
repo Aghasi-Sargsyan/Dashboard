@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 100px auto 0;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.label > span {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}

@@ -7,9 +7,7 @@ const Users = () => {
 
   return (
     <MainLayout title={title} description={description}>
-      <div data-component="Users">
-        <h1>Users</h1>
-      </div>
+      <div data-component="Users"></div>
     </MainLayout>
   );
 };

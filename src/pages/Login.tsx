@@ -11,7 +11,6 @@ const Login = () => {
   return (
     <MainLayout title={title} description={description}>
       <div data-component="Login">
-        <h1>Login</h1>
         <LoginForm onSubmit={loginUser} />
       </div>
     </MainLayout>

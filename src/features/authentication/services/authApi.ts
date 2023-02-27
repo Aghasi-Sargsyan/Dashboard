@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { login, logout, selectToken } from './authSlice';
+import { login, logout, selectUser } from './authSlice';
 import { RootState } from '@/store/types';
 import { LoginRequest, UserResponse } from '../models';
 import { mockUser } from 'features/authentication/mock';
@@ -11,9 +11,9 @@ export const authApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: '/',
     prepareHeaders: (headers, { getState }) => {
-      const token = selectToken(getState() as RootState);
-      if (token) {
-        headers.set('Authorization', `Bearer ${token}`);
+      const user = selectUser(getState() as RootState);
+      if (user?.token) {
+        headers.set('Authorization', `Bearer ${user.token}`);
       }
       return headers;
     },

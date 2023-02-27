@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from './cn.module.css';
 import { FormEventHandler, useState } from 'react';
-import { Input } from 'components/ui';
+import { Button, Input } from 'components/ui';
 
 type OnSubmitArgs = {
   username: string;
@@ -28,28 +28,30 @@ const LoginForm = ({ onSubmit }: Props) => {
 
   return (
     <form className={cn.root} onSubmit={handleSubmit} data-component="LoginForm">
-      <label>
-        Username
+      <label className={cn.label}>
+        <span>Username</span>
         <Input
           type="text"
-          name="username"
           value={username}
           onChange={(event) => setUsername(event.target.value)}
-          aria-label="Username"
+          placeholder="Username"
           required
         />
       </label>
 
-      <label>Password</label>
-      <input
-        type="password"
-        name="password"
-        value={password}
-        onChange={(event) => setPassword(event.target.value)}
-        aria-label="Password"
-        required
-      />
-      <button type="submit">Submit</button>
+      <label className={cn.label}>
+        <span>Password</span>
+        <Input
+          type="password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+          placeholder="Password"
+          required
+        />
+      </label>
+      <Button className={cn.submit} type="submit">
+        Submit
+      </Button>
     </form>
   );
 };
